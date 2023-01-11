@@ -4,6 +4,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,4 +67,15 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+
+    //<<<<<<<<<<<<<<<<<<<<<<<TOTAL AMOUNT OF ORDERED ITEMS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void totalAmountOfOrderedItems(){
+        int totalAmount;
+        List<String> checkedItems =null;
+        totalAmount = restaurant.getOrderedValue(checkedItems);
+
+
+    //<<<<<<<<<<<<<<<<<<<<<<<TOTAL AMOUNT OF ORDERED ITEMS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    }
 }
