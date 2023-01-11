@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +58,14 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public int getOrderedValue(List<String> checkedItems) {
+        int totalAmount=0;
+        for(String itemName:checkedItems){
+            totalAmount=totalAmount+findItemByName(itemName).getPrice();
+        }
+        return totalAmount;
     }
 
 }

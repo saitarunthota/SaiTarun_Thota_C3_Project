@@ -5,6 +5,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +28,7 @@ class RestaurantTest {
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
         Restaurant restaurantSpied = Mockito.spy(restaurant);
-        LocalTime timeOfRestaurantIsOpened = LocalTime.parse("12:30:00");
+        LocalTime timeOfRestaurantIsOpened = LocalTime.parse("11:30:00");
         Mockito.when(restaurantSpied.getCurrentTime()).thenReturn(timeOfRestaurantIsOpened);
         assertEquals(true,restaurantSpied.isRestaurantOpen());
     }
@@ -72,9 +73,10 @@ class RestaurantTest {
     @Test
     public void totalAmountOfOrderedItems(){
         int totalAmount;
-        List<String> checkedItems =null;
+        List<String> checkedItems = Arrays.asList("Sweet corn soup","Vegetable lasagne");
+        restaurant.displayDetails();
         totalAmount = restaurant.getOrderedValue(checkedItems);
-
+        assertEquals(388,totalAmount);
 
     //<<<<<<<<<<<<<<<<<<<<<<<TOTAL AMOUNT OF ORDERED ITEMS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     }
